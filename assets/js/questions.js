@@ -1,6 +1,6 @@
 // create an array of objects with questions, options and correct answers 
-let  qb =[
-    
+let  questions =[
+
 {question: "Commonly used data types DO Not Include",
     a: "1. strings", 
     b: "2. booleans",
