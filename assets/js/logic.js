@@ -24,3 +24,17 @@ function startTimer(){
         clearInterval(timeInterval);}
     }, 1000);
 }
+
+function showQuestion(questions){
+    questionElement.innerText = questions.question;
+    questions.answers.forEach(answer => {
+        const button = document.createElement('button')
+        button.innerText = answer.text
+        button.classList.add('btn')
+        if (answer.correct){
+            button.dataset.correct = answer.correct
+        }
+        button.addEventListener('click',selectAnswer)
+        answerButtonsElement.appendChild(button);
+    });
+}
