@@ -2,24 +2,14 @@ const startButton = document.getElementById('start');
 const timer = document.getElementById('time');
 const startScreen = document.getElementById('start-screen');
 const questionsScreen = document.getElementById('questions');
-const questionTitle = document.getElementById('question-title');
-const questionChoices = document.getElementById('choices');
+const feedback = document.getElementById('feedback');
+const endScreen = document.getElementById("end-screen");
+const finalScore = document.getElementById("final-score");
+const submitButton = document.getElementById("submit");
+
 let currentQuiz = 0
 let score = 0
 let shuffledQuestions, currentQuestionIndex
-
-startButton.addEventListener('click', startQuiz);
-
-
-
-function startQuiz(){
-    startTimer();
-    startScreen.classList.add('hide');
-    questionsScreen.classList.remove('hide');
-    showQuestion();
-    shuffledQuestions = questions.sort(() => Math.random() - .5);
-    currentQuestionIndex = 0;
-}
 
 var secondsLeft = 100;
 function startTimer(){
@@ -31,66 +21,55 @@ function startTimer(){
     }, 1000);
 }
 
-function setNextQuestion(){
-    showQuestion(shuffledQuestions[currentQuestionIndex])
-} 
+startButton.addEventListener('click', startQuiz);
+function startQuiz(){
+    startTimer();
+    startScreen.classList.add('hide');
+    questionsScreen.classList.remove('hide');
+    feedback.classList.remove("hide");
+    showQuestion();
+    // shuffledQuestions = questions.sort(() => Math.random() - .5);
+    // currentQuestionIndex = 0;
+}
 
-function showQuestion(question){
-    questionTitle.innerText = question.question
-    
+function endQuiz(){
+    questionsScreen.classList.add("hide");
+    endScreen.classList.remove("hide");
+    clearInterval(timeInterval);
+    score += secondsLeft; 
+    finalScore += score;
 }
 
 
-const  questions = [
-{
-    question: "Commonly used data types DO Not Include",
-    answers: [
-        {text: "1. strings", correct: false },
-        {text: "2. booleans", correct: true},
-        {text: "3. alerts", correct: false},
-        {text: "4. numbers", correct: false}
-    ]
-},
+submitButton.addEventListener("click", function(event) {
+    log("submitButton.click event handler");
+    var response = initials.value;
+    if (response === "")
+    {
+        addScore("anonymous", score);
+    }
+    else {
+        addScore(response, score);
+    }
+    // navigate to the highscore table
+    window.location.replace("highscores.html");
+});
 
-{
-    question: "The condition in an if / else statement is enclosed with",
-    answers: [
-        {text: "1. quotes", correct: false },
-        {text: "2. curly brackets", correct: false},
-        {text: "3. parenthesis", correct: true},
-        {text: "4. square brackets", correct: false}
-    ]
-},    
 
-{
-    question: "Arrays in JavaScript can be used to store?",
-    answers: [
-        {text: "1. number and strings", correct: false },
-        {text: "2. other arrays", correct: false},
-        {text: "3. booleans", correct: false},
-        {text: "4. all of the above", correct: true}
-    ]
-},
+function addScore(initials, score) {
+    log("addScore(" + initials + "," + score + ")");
 
-{
-    question: "String values must be enclosed within __________ when being assigned to variables.",
-    answers: [
-        {text: "1. commas", correct: false },
-        {text: "2. curly brackets", correct: false},
-        {text: "3. quotes", correct: true},
-        {text: "4. parenthesis", correct: false}
-    ]
-},
-
-{
-    question: "A very useful tool used during development and debugging for printing content to the debugger is:",
-    answers: [
-        {text: "1. JavaScript", correct: false },
-        {text: "2. terminal/bash", correct: false},
-        {text: "3. for loops", correct: false},
-        {text: "4. console.log", correct: true}
-    ]
-}
-]
-
+    const newScore = { initials, score };
     
+    // Add new score to list
+    highScores.push(newScore);
+
+    // (Re)sort the list by score descending
+    highScores.sort((a, b) => b.score - a.score);
+
+    // Select new list from the top NO_OF_HIGH_SCORES (if there are two many entries lowest scores effectively drop off the bottom)
+    highScores.splice(NO_OF_HIGH_SCORES);
+
+    // Save to local storage
+    localStorage.setItem(HIGH_SCORES, JSON.stringify(highScores));
+}
