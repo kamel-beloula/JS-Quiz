@@ -46,16 +46,24 @@ function showQuestion(){
     }
 }    
 
+const correctAudio  = new Audio("./assets/sfx/correct.wav");
+const incorrectAudio = new Audio("./assets/sfx/incorrect.wav");
+
 choices.addEventListener("click", function(event) {
     var element = event.target;
-  
     if (element.matches("button")) {
       var correct = element.getAttribute("data-correct");
-      if (correct) {
-        
-      } else {
-
+        if (correct==="true") {
+        feedback.textContent = "Correct!";
+        score++;
+        correctAudio.play();
+        } else {
+        feedback.textContent = "Wrong!";
+        secondsLeft -= 10; 
+        incorrectAudio.play();
       }
+      questionIndex++;
+      showQuestion()
     }
       })
     
