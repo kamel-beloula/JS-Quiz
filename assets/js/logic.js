@@ -2,12 +2,10 @@ const startButton = document.getElementById('start');
 const timer = document.getElementById('time');
 const startScreen = document.getElementById('start-screen');
 const questionsScreen = document.getElementById('questions');
-const feedback = document.getElementById('feedback');
 const endScreen = document.getElementById("end-screen");
 const finalScore = document.getElementById("final-score");
 const submitButton = document.getElementById("submit");
 
-let currentQuiz = 0
 let score = 0
 let shuffledQuestions, currentQuestionIndex
 
