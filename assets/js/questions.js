@@ -65,7 +65,7 @@ choices.addEventListener("click", function(event) {
             incorrectAudio.play();
         }
         questionIndex++;
-        if (questionIndex = questions.length){
+        if (questionIndex === questions.length){
             endQuiz();
         }else{
         clearPreviousQuestion ();

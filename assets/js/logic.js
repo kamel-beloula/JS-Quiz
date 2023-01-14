@@ -4,18 +4,22 @@ const startScreen = document.getElementById('start-screen');
 const questionsScreen = document.getElementById('questions');
 const endScreen = document.getElementById("end-screen");
 const finalScore = document.getElementById("final-score");
+const stats = document.getElementById("stats");
 const submitButton = document.getElementById("submit");
 
 let score = 0
 let shuffledQuestions, currentQuestionIndex
 
-var secondsLeft = 100;
+var secondsLeft = 60;
+var timeInterval;
 function startTimer(){
-    var timeInterval = setInterval(() => {
+    timeInterval = setInterval(() => {
     secondsLeft--
     timer.textContent = secondsLeft;
     if (secondsLeft === 0){
-        clearInterval(timeInterval);}
+        clearInterval(timeInterval);
+        endQuiz();
+    }
     }, 1000);
 }
 
@@ -26,8 +30,10 @@ function startQuiz(){
     questionsScreen.classList.remove('hide');
     feedback.classList.remove("hide");
     showQuestion();
-    // shuffledQuestions = questions.sort(() => Math.random() - .5);
-    // currentQuestionIndex = 0;
+}
+
+if (secondsLeft === 0){
+    endQuiz();
 }
 
 function endQuiz(){
@@ -35,7 +41,8 @@ function endQuiz(){
     endScreen.classList.remove("hide");
     clearInterval(timeInterval);
     score += secondsLeft; 
-    finalScore += score;
+    finalScore.textContent += score;
+    stats.classList.add('hide');
 }
 
 
