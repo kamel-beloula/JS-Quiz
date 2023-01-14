@@ -1,10 +1,8 @@
-// DoM objects
 const questionTitle = document.getElementById('question-title');
 const choices = document.getElementById('choices');
 const feedback = document.getElementById('feedback');
 let currentScore = document.getElementById('score')
 
-// Constants
 const questions = [
     {
         question: "Commonly used data types DO NOT include:",
@@ -47,6 +45,13 @@ function showQuestion(){
     }
 }    
 
+function clearPreviousQuestion (){
+    questionTitle.textContent = "";
+    while (choices.firstElementChild) {
+        choices.firstElementChild.remove();
+    }
+}
+
 const correctAudio  = new Audio("./assets/sfx/correct.wav");
 const incorrectAudio = new Audio("./assets/sfx/incorrect.wav");
 
@@ -74,11 +79,5 @@ choices.addEventListener("click", function(event) {
     }
     })
 
-function clearPreviousQuestion (){
-    questionTitle.textContent = "";
-    while (choices.firstElementChild) {
-        choices.firstElementChild.remove();
-    }
-}
 
     
