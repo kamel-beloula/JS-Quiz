@@ -3,10 +3,8 @@ const timer = document.getElementById('time');
 const startScreen = document.getElementById('start-screen');
 const questionsScreen = document.getElementById('questions');
 const endScreen = document.getElementById('end-screen');
-const finalScore = document.getElementById('final-score');
+
 const stats = document.getElementById('stats');
-const submitButton = document.getElementById('submit');
-const initialsInput = document.getElementById('initials');
 
 let score = 0;
 var secondsLeft = 60;
@@ -41,25 +39,9 @@ function endQuiz(){
     endScreen.classList.remove("hide");
     clearInterval(timeInterval);
     score += secondsLeft; 
-    finalScore.textContent += score;
     stats.classList.add('hide');
+    feedback.classList.add("hide");
+    localStorage.setItem("recentScore", score);
+    
 }
 
-submitButton.addEventListener("click", function(event) {
-    event.preventDefault();
-    var initials = initialsInput.value.trim()
-    if (initials === "") {
-        displayMessage("error", "initials cannot be blank");
-    }
-})
-
-var initials = localStorage.getItem("initials");
-
-counter.textContent = count;
-
-addButton.addEventListener("click", function() {
-  count++;
-  counter.textContent = count;
-
-  localStorage.setItem("count", count);
-});
