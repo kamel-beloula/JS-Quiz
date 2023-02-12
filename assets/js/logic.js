@@ -5,11 +5,9 @@ const questionsScreen = document.getElementById("questions");
 const endScreen = document.getElementById("end-screen");
 const finalScore = document.getElementById("final-score");
 const stats = document.getElementById("stats");
-
 const initialsInput = document.getElementById("initials");
 const submitButton = document.getElementById("submit");
 const clearButton = document.getElementById("clear");
-
 
 let score = 0;
 var secondsLeft = 60;
@@ -49,8 +47,15 @@ function endQuiz() {
   finalScore.textContent = score;
 }
 
-submitButton.addEventListener("click", saveLeaderbord)
-
-
-
-  
+function saveLeaderbord() {
+  console.log("button clicked");
+  const leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
+  var player = initialsInput.value;
+  console.log(player);
+  leaderboard.push({ player, score });
+  leaderboard.sort((a, b) => b.score - a.score);
+  console.log(leaderboard);
+  localStorage.setItem("leaderboard", JSON.stringify(leaderboard));
+  window.location.replace("highscores.html");
+}
+submitButton.addEventListener("click", saveLeaderbord);
