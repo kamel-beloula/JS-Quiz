@@ -1,88 +1,83 @@
-# Module 6 Challenge Web APIs: Code Quiz
+# Javascript Quiz Game
 
-## Your Task
+## Description
 
-As you proceed in your journey to becoming a front-end web developer, it’s likely that you’ll be asked to complete a coding assessment, perhaps as part of an interview process. A typical coding assessment is a combination of multiple-choice questions and interactive coding challenges. 
+A simple calendar application that allows a user to save events for each hour of the working day.
 
-To help you become familiar with these tests and give you a chance to apply the skills from this module, this week’s challenge invites you to build a timed coding quiz with multiple-choice questions. This app will run in the browser, and will feature dynamically updated HTML and CSS powered by JavaScript code that you write. It will have a clean, polished, and responsive user interface. This week’s coursework has taught you all the skills you need to succeed in this challenge.
+## Table of Contents
 
-
-## User Story
-
-```
-AS A coding boot camp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
-
-## Acceptance Criteria
-
-Create a code quiz that contains the following requirements:
-
-* A start button that when clicked a timer starts and the first question appears.
- 
-  * Questions contain buttons for each answer.
-  * 
-  * When answer is clicked, the next question appears
-  * 
-  * If the answer clicked was incorrect then subtract time from the clock
-
-* The quiz should end when all questions are answered or the timer reaches 0.
-
-  * When the game ends, it should display their score and give the user the ability to save their initials and their score
-  
-## Mock-Up
-
-The following animation demonstrates the application functionality:
-
-![Animation of code quiz. Presses button to start quiz. Clicks the button for the answer to each question, displays if answer was correct or incorrect. Quiz finishes and displays high scores. User adds their intials, then clears their intials and starts over.](./assets/08-web-apis-challenge-demo.gif)
-
-## Grading Requirements
-
-This challenge is graded based on the following criteria: 
-
-### Technical Acceptance Criteria: 40%
-
-* Satisfies all of the above acceptance criteria.
-
-### Deployment: 32%
-
-* Application deployed at live URL.
-
-* Application loads with no errors.
-
-* Application GitHub URL submitted.
-
-* GitHub repository that contains application code.
-
-### Application Quality: 15%
-
-* Application user experience is intuitive and easy to navigate.
-
-* Application user interface style is clean and polished.
-
-* Application resembles the mock-up functionality provided in the challenge instructions.
-
-### Repository Quality: 13%
-
-* Repository has a unique name.
-
-* Repository follows best practices for file structure and naming conventions.
-
-* Repository follows best practices for class/id naming conventions, indentation, quality comments, etc.
-
-* Repository contains multiple descriptive commit messages.
-
-* Repository contains quality README file with description, screenshot, and link to deployed application.
+- [Installation](#installation)
+- [Usage](#usage)
+- [Deployed application](#deployed-application)
+- [Screen Shot](#screenshot)
+- [Tasks Completed](#tasks-completed)
+- [Things I learnt](#things-i-learnt)
+- [Technologies Used](#technologies-used)
+- [Credits](#credits)
+- [License](#license)
 
 
-## Review
+## Installation
 
-You are required to submit BOTH of the following for review:
 
-* The URL of the functional, deployed application.
+In order to install this project, you must login to GitHub. Once there you will click on the green button that says clone or download. You will be given choices on how to download: using the ssh/html key or downloading the zip file.
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+Using SSH/HTML Key: You will copy the link shown and open up either terminal (mac: pre-installed) or gitbash (pc: must be installed). Once the application is open, you will type git clone paste url here. Once you have cloned the repo, cd into the repo and type "open ." to open the folder which contains all files used for the website. You can also type "code ." to open the repo in VS code.
 
----
-© 2022 edX Boot Camps LLC. Confidential and Proprietary. All Rights Reserved.
+Using Download ZIP: Click on Download Zip. Locate the file and double click it to unzip the file. Locate the unzipped folder and and open it. All the files for the website will be within this folder.
+
+## Usage
+
+Open the index.html file in your browser,or simply click on the live link of the deployed application. 
+
+You will be presented with the office hours planner, from 9am to 5pm. simply write down your task and click on a save button.
+
+depending on your current hour, the past hour ranges will be in grey, the current hour row will be red and the future hours green.
+
+## Deployed application
+[Link to the deployed website](https://kamel-beloula.github.io/office-hours-planner/)
+
+
+
+## Screenshot
+![deployed application screenshot](./images/Screenshot%202023-01-25%20at%2023-25-27%20Office%20hours%20Planner.png)
+
+## Tasks Completed
+
+* Implemented the required solution in the browser featuring dynamically updated HTML and CSS powered by jQuery and Moment.js
+* Divided the implementation into multiple logical functions
+* Uses localStorage to maintain the schedule in a JSON serialised array
+* Implemented a clock using a setInterval and Moment.js for date and time utilities
+* Implemented schedule rows using jQuery and Bootstrap
+* Implemented a click event handler using jQuery
+
+## Things I learnt
+
+* Use of Moment.js date and time utilities and format method
+* Use of jQuery to retrieve and build DoM elements
+* Use of localStorage and JSON.stringify and JSON.parse methods which took me a
+
+## Technologies Used
+
+- HTML
+- CSS
+- Javascript
+
+
+## Credits
+
+Trilogy Education Services Frontend Web Development bootcamp website.  
+
+
+
+## License
+
+MIT License
+
+Copyright (c) 2022 kamel beloula
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.

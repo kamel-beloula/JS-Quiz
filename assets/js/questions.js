@@ -3,39 +3,39 @@ const choices = document.getElementById("choices");
 const feedback = document.getElementById("feedback");
 let currentScore = document.getElementById("score");
 
+//https://data-flair.training/blogs/javascript-quiz/
 const questions = [
   {
-    question: "Commonly used data types DO NOT include:",
-    choices: ["string", "booleans", "alerts", "numbers"],
+    question: "JavaScript is a ___ -side programming language.",
+    choices: ["Client", "Server", "Both", "None"],
     answer: [false, false, true, false],
   },
   {
     question:
-      "The condition in an if / else statement is enclosed within ___________.",
-    choices: ["quotes", "curly brackets", "parenthesis", "square brackets"],
-    answer: [false, false, true, false],
-  },
-  {
-    question: "Arrays in JavaScript can be used to store _________.",
+      "Which of the following will write the message “Hello DataFlair!” in an alert box?",
     choices: [
-      "numbers and strings",
-      "other arrays",
-      "booleans",
-      "all of the above",
+      " alertBox(“Hello DataFlair!”);",
+      " alert(Hello DataFlair!);",
+      " msgAlert(“Hello DataFlair!”);",
+      " alert(“Hello DataFlair!”);",
     ],
     answer: [false, false, false, true],
   },
   {
-    question:
-      "String values must be enclosed within ______ when being assigned to variables.",
-    choices: ["commas", "curly brackets", "quotes", "parenthesis"],
-    answer: [false, false, true, false],
+    question: "How do you find the minimum of x and y using JavaScript?",
+    choices: [" min(x,y);", " Math.min(x,y)", " Math.min(xy)", " min(xy);"],
+    answer: [false, true, false, false],
   },
   {
     question:
-      "A very useful tool used during development and debugging for printing content to the debugger is:",
-    choices: ["JavaScript", "terminal / bash", "for loops", "console.log"],
-    answer: [false, false, false, true],
+      "Which are the correct “if” statements to execute certain code if “x” is equal to 2?",
+    choices: ["if(x 2)", " if(x = 2)", " if(x == 2)", " if(x != 2 )"],
+    answer: [false, false, true, false],
+  },
+  {
+    question: "What will the code return?" / " Boolean(3 < 7)",
+    choices: ["True", "False", "NaN", "SyntaxError"],
+    answer: [true, false, false, false],
   },
 ];
 
