@@ -11,8 +11,6 @@ there is a time limit and a pinality for wrong answers.
 - [Usage](#usage)
 - [Deployed application](#deployed-application)
 - [Screen Shot](#screenshot)
-- [Tasks Completed](#tasks-completed)
-- [Things I learnt](#things-i-learnt)
 - [Technologies Used](#technologies-used)
 - [Credits](#credits)
 - [License](#license)
@@ -37,11 +35,15 @@ Your initials and score will be added and saved in the leaderboard list.
 
 
 ## Deployed application
-[Link to the deployed website](https://kamel-beloula.github.io/office-hours-planner/)
+[Link to the deployed website](https://kamel-beloula.github.io/JS-Quiz/)
 
 
 ## Screenshot
-![deployed application screenshot](./images/Screenshot%202023-01-25%20at%2023-25-27%20Office%20hours%20Planner.png)
+![deployed application screenshot](./images/welcome.png)
+![deployed application screenshot](./images/question.png)
+![deployed application screenshot](./images/endgame.png)
+![deployed application screenshot](./images/results.png)
+![deployed application screenshot](./images/leaderboard.png)
 
 
 ## Technologies Used
