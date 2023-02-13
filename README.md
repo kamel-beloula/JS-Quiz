@@ -2,7 +2,8 @@
 
 ## Description
 
-A simple calendar application that allows a user to save events for each hour of the working day.
+This is a Javascript Quiz to test your basic knowledge. The Quiz is a timed multuple choice questions.
+there is a time limit and a pinality for wrong answers.
 
 ## Table of Contents
 

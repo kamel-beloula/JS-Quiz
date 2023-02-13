@@ -1,3 +1,4 @@
+// DoM objects
 const startButton = document.getElementById("start");
 const timer = document.getElementById("time");
 const startScreen = document.getElementById("start-screen");
@@ -9,10 +10,12 @@ const initialsInput = document.getElementById("initials");
 const submitButton = document.getElementById("submit");
 const clearButton = document.getElementById("clear");
 
+// variable 
 let score = 0;
-var secondsLeft = 60;
-var timeInterval;
+let secondsLeft = 60;
+let timeInterval;
 
+//timer function
 function startTimer() {
   timeInterval = setInterval(() => {
     secondsLeft--;
@@ -24,6 +27,7 @@ function startTimer() {
   }, 1000);
 }
 
+//
 startButton.addEventListener("click", startQuiz);
 function startQuiz() {
   startTimer();
@@ -51,7 +55,6 @@ function saveLeaderbord() {
   console.log("button clicked");
   const leaderboard = JSON.parse(localStorage.getItem("leaderboard")) || [];
   var player = initialsInput.value;
-  console.log(player);
   leaderboard.push({ player, score });
   leaderboard.sort((a, b) => b.score - a.score);
   console.log(leaderboard);

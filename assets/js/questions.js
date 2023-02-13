@@ -33,7 +33,7 @@ const questions = [
     answer: [false, false, true, false],
   },
   {
-    question: "What will the code return?" / " Boolean(3 < 7)",
+    question: "What will the code return?  Boolean(3 < 7)",
     choices: ["True", "False", "NaN", "SyntaxError"],
     answer: [true, false, false, false],
   },
