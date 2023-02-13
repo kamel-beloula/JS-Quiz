@@ -21,42 +21,28 @@ there is a time limit and a pinality for wrong answers.
 ## Installation
 
 
-In order to install this project, you must login to GitHub. Once there you will click on the green button that says clone or download. You will be given choices on how to download: using the ssh/html key or downloading the zip file.
-
-Using SSH/HTML Key: You will copy the link shown and open up either terminal (mac: pre-installed) or gitbash (pc: must be installed). Once the application is open, you will type git clone paste url here. Once you have cloned the repo, cd into the repo and type "open ." to open the folder which contains all files used for the website. You can also type "code ." to open the repo in VS code.
-
-Using Download ZIP: Click on Download Zip. Locate the file and double click it to unzip the file. Locate the unzipped folder and and open it. All the files for the website will be within this folder.
+N/A
 
 ## Usage
 
 Open the index.html file in your browser,or simply click on the live link of the deployed application. 
 
-You will be presented with the office hours planner, from 9am to 5pm. simply write down your task and click on a save button.
+You will be presented with the Quiz page, read the instructions and click the start button when ready.
 
-depending on your current hour, the past hour ranges will be in grey, the current hour row will be red and the future hours green.
+The score and the time are displayed in the top right corner of the page.
+
+The quiz will end when you run out of time or you answer all the question. You score will show and you will be invited to enter your initials.
+
+Your initials and score will be added and saved in the leaderboard list.
+
 
 ## Deployed application
 [Link to the deployed website](https://kamel-beloula.github.io/office-hours-planner/)
 
 
-
 ## Screenshot
 ![deployed application screenshot](./images/Screenshot%202023-01-25%20at%2023-25-27%20Office%20hours%20Planner.png)
 
-## Tasks Completed
-
-* Implemented the required solution in the browser featuring dynamically updated HTML and CSS powered by jQuery and Moment.js
-* Divided the implementation into multiple logical functions
-* Uses localStorage to maintain the schedule in a JSON serialised array
-* Implemented a clock using a setInterval and Moment.js for date and time utilities
-* Implemented schedule rows using jQuery and Bootstrap
-* Implemented a click event handler using jQuery
-
-## Things I learnt
-
-* Use of Moment.js date and time utilities and format method
-* Use of jQuery to retrieve and build DoM elements
-* Use of localStorage and JSON.stringify and JSON.parse methods which took me a
 
 ## Technologies Used
 
